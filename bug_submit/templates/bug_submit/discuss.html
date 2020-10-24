@@ -1,0 +1,234 @@
+{% extends "my_blogs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h3>测试姬的讨论区 <span class="label label-primary">测试中</span></h3>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h3 class="text-center text-info">
+                    学习日志v0.02
+                </h3>
+            </div>
+        </div>
+        <div class="span6">
+            <h3>
+                已实装功能一览
+            </h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        实装功能
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        是否可靠
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        编辑已有文档
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        新增主题
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="error">
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        日期显示功能（中国时间）
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="warning">
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        登陆登出
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                        4
+                    </td>
+                    <td>
+                        注册
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                        5
+                    </td>
+                    <td>
+                        文本排版
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                        6
+                    </td>
+                    <td>
+                        文本上传(txt格式)
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        是
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+            <div class="span6">
+            <h3>
+                未来预计实装的功能
+            </h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        实装功能
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        优先级
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        个人数据统计中心v0.02a
+                    </td>
+                    <td>
+                        2020/9/xx
+                    </td>
+                    <td>
+                        T0
+                    </td>
+                </tr>
+                <tr class="inform">
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        在线音频播放器 NyxBeats
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        T1
+                    </td>
+                </tr>
+                <tr class="error">
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        日期显示功能（世界时间）
+                    </td>
+                    <td>
+                        未知
+                    </td>
+                    <td>
+                        T2
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+{% endblock header %}
+
+{% block content %}
+    <h3>用户提交的Bug一览</h3>
+
+    {% for bug_infrom in bug_infrom_s %}
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3>
+                    {{ bug_infrom.date_added|date:'M d, Y H:i' }} 匿名用户
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                {{ bug_infrom.text|linebreaks }}
+            </div>
+        </div> <!-- panel -->
+    {% empty %}
+        抱歉，暂时未有任何bug被提交
+    {% endfor %}
+
+{% endblock content %}
+

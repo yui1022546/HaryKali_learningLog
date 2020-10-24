@@ -1,0 +1,28 @@
+{% extends "my_blogs/base.html" %}
+{% block header %}
+    <div class='jumbotron'>
+        <h1>学习日志v0.01</h1>
+    </div>
+{% endblock header %}
+{% block content %}
+    <h3>
+        <a href="{% url 'users:register' %}">点击此处注册账户</a> 并在网页上记录你的每日学习所得
+    </h3>
+    <h2 class="text-warning">
+        注意：该网站正处于测试中，请对自己的重要文件进行二次备份
+    </h2>
+
+
+    <br>
+    <h4>更新日志</h4>
+    <ul>
+        <li>v0.01：优化时间显示，调整主页排版</li>
+
+
+    </ul>
+
+
+
+
+
+{% endblock content %}

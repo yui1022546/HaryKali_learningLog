@@ -1,0 +1,33 @@
+{% extends "my_blogs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h3>测试姬的提交页面 <span class="label label-primary">测试中</span></h3>
+
+{% endblock header %}
+{% block content %}
+
+{#        <div class="btn-group ">#}
+{#            <button class="btn" contenteditable="true">Bug类型</button>#}
+{#            <button class="btn dropdown-toggle" data-toggle="dropdown"></button>#}
+{#            <ul class="dropdown-menu" contenteditable="true">#}
+{#                <li><a href="#">显示问题</a></li>#}
+{#                <li><a href="#">网页跳转问题</a></li>#}
+{#                <li><a href="#">时间显示问题</a></li>#}
+{#                <li class="divider">&nbsp;</li>#}
+{#                <li><a href="#">优化：ui</a></li>#}
+{#                <li><a href="#">优化：笔记体验</a></li>#}
+{#                <li><a href="#">优化：增加新功能</a></li>#}
+{#                <li class="divider">&nbsp;</li>#}
+{#                <li><a href="#">其他问题</a></li>#}
+{#            </ul>#}
+{#        </div>#}
+    <form action="{% url 'bug_submit:submit' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form bug_inform %}
+        {% buttons %}
+
+            <button name="提交bug" class="btn btn-primary">提交bug</button>
+        {% endbuttons %}
+    </form>
+{% endblock content %}}
